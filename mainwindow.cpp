@@ -75,7 +75,7 @@ void MainWindow::RenderCycle()
             mat1  = Mat4x4::RotateZMat(0.05);
         }
 
-        Mat4x4 mat2 = Mat4x4::TranslatioMat(0,0,-2.5);
+        Mat4x4 mat2 = Mat4x4::TranslatioMat(-0.2,0,-1.5);
         Mat4x4 mat3 = Mat4x4::ProjectionMat(1.5,1.5,0.1,100);
         Mat4x4 mat4 = Mat4x4::ViewportMat(400,-400,200,200);
 
@@ -300,13 +300,13 @@ inline void MainWindow::setPixel(int x, int y, const ColorRGB8& color)
 {
     QRgb colorval = qRgb((int)color.r,(int)color.g,(int)color.b);
 
-    if((x>400)||(x<0))
+    if((x>=400)||(x<0))
     {
         std::cout << "Error";
         return;
     }
 
-    if((y>400)||(y<0))
+    if((y>=400)||(y<0))
     {
         std::cout << "Error";
         return;
